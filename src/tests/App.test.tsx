@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-import { App } from '../App';
+import App from '../App';
 
 describe('App', () => {
   let rendered: ReactWrapper;
