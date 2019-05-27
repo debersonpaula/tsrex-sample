@@ -1,0 +1,16 @@
+{
+  "name": "tsrex-sample",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsrex start ./react.config.js",
+    "build": "tsrex build ./react.config.js",
+    "test": "tsrex test ./react.config.js"
+  },
+  "author": "D.A.Paula",
+  "license": "MIT",
+  "dependencies": {
+    "tsrex": "0.0.0-beta.15"
+  }
+}
