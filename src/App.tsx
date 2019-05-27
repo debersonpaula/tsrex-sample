@@ -11,7 +11,7 @@ class App extends React.Component {
         <div>
           <h2>React App</h2>
           <p>Testing TSREx</p>
-          <p>ExRedux Counter</p>
+          <p>ExRedux Counter: </p>
           <CounterContainer />
         </div>
       </Provider>
@@ -19,4 +19,4 @@ class App extends React.Component {
   }
 }
 
-export default reactHot(App);
+export default reactHot(module, App);
