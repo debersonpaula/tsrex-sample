@@ -2,11 +2,10 @@ import * as React from 'react';
 import { Connection, Inject } from 'exredux';
 import { appModels } from '../AppModels';
 import { CounterModel } from './CounterModel';
-import { ICounter } from './ICounter';
 import { CounterComponent } from './CounterComponent';
 
 class ModelProps {
-  @Inject(CounterModel) counterModel?: ICounter;
+  @Inject counterModel?: CounterModel;
 }
 
 @Connection({

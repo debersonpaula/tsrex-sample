@@ -1,8 +1,7 @@
 import { Model, Action } from 'exredux';
-import { ICounter } from './ICounter';
 
 @Model
-export class CounterModel implements ICounter {
+export class CounterModel {
   counter = 0;
   
   @Action add() {

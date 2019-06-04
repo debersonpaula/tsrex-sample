@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ICounter } from './ICounter';
+import { CounterModel } from './CounterModel';
 
 class Props {
-  counterModel: ICounter;
+  counterModel: CounterModel;
 }
 
 export class CounterComponent extends React.Component<Props> {

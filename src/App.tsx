@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { Provider } from 'react-redux';
+import { Provider } from 'exredux';
 import { CounterContainer } from './counter/CounterContainer';
 import { appModels } from './AppModels';
-import { reactHot } from 'tsrex/utils';
 
 class App extends React.Component {
   render() {
     return (
-      <Provider store={appModels.createStore()}>
+      <Provider modelStore={appModels}>
         <div>
           <h2>React App</h2>
           <p>Testing TSREx</p>
@@ -19,4 +18,4 @@ class App extends React.Component {
   }
 }
 
-export default reactHot(module, App);
+export default App;
