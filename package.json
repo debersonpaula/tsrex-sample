@@ -1,6 +1,6 @@
 {
   "name": "tsrex-sample",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "author": "D.A.Paula",
   "license": "MIT",
   "dependencies": {
-    "tsrex": "0.0.2-rc.2"
+    "tsrex": "0.0.3"
   }
 }
