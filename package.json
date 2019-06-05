@@ -11,6 +11,6 @@
   "author": "D.A.Paula",
   "license": "MIT",
   "dependencies": {
-    "tsrex": "0.0.3"
+    "tsrex": "0.0.6"
   }
 }
