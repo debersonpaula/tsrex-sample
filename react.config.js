@@ -5,6 +5,7 @@ module.exports = {
   port: 8080,
   host: 'localhost',
   nodeEnv: {
+    API_URL: 'https://reqres.in'
   },
   htmlEnv: {
   },
