@@ -3,9 +3,10 @@ import { Inject, Connection } from 'exredux';
 import { ProductListModel } from '../service/models/ProductListModel';
 import { modelStore } from '../service/modelStore';
 import { Contact } from '../components/Contact';
+import { ContactModel } from '../service/models/ContactModel';
 
 class Props {
-  @Inject productList: ProductListModel;
+  @Inject contactModel: ContactModel;
 }
 
 @Connection({
@@ -14,6 +15,7 @@ class Props {
 })
 export class PageContact extends React.Component<Props> {
   render() {
-    return <Contact />;
+    const { contactModel } = this.props;
+    return <Contact onFieldUpdate={contactModel.doFieldUpdate} onSubmit={contactModel.doSubmit} />;
   }
 }

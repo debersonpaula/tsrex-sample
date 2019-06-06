@@ -15,7 +15,7 @@ const { classes } = createJssStyle({
 // ---------------------------------------------------------------------
 // --- COMPONENT -------------------------------------------------------
 // ---------------------------------------------------------------------
-export class Contact extends React.Component {
+export class Contact extends React.Component<Props> {
   render() {
     return (
       <div>
@@ -23,17 +23,28 @@ export class Contact extends React.Component {
         <div className={classes.formContact}>
           <p>
             <label>Name</label>
-            <input name="contact_name" />
+            <input name="contact_name" onChange={this.handleFieldUpdate('contact_name')} />
           </p>
           <p>
             <label>Email</label>
-            <input name="contact_email" />
+            <input name="contact_email" onChange={this.handleFieldUpdate('contact_email')} />
           </p>
           <p>
-            <button>Send</button>
+            <button onClick={this.props.onSubmit}>Send</button>
           </p>
         </div>
       </div>
     );
   }
+
+  handleFieldUpdate = (fieldName: string) => evt => {
+    this.props.onFieldUpdate(fieldName, evt.target.value);
+  }
+}
+// ---------------------------------------------------------------------
+// --- PROPS -----------------------------------------------------------
+// ---------------------------------------------------------------------
+interface Props {
+  onFieldUpdate: (fieldName: string, value: string) => void;
+  onSubmit: () => void;
 }
