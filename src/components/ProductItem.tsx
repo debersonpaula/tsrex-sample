@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { createJssStyle } from '../helper/styler';
-import { IProductsResult } from '../service/interfaces/IProductsResult';
-import { Link } from 'react-router-dom';
+import { IProductResult } from '../service/interfaces/IProductResult';
 // ---------------------------------------------------------------------
 // --- STYLE -----------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -28,35 +27,49 @@ const { classes } = createJssStyle({
 // --- PROPS -------------------------------------------------------
 // ---------------------------------------------------------------------
 interface Props {
-  products: IProductsResult;
+  product: IProductResult;
 }
 // ---------------------------------------------------------------------
 // --- COMPONENT -------------------------------------------------------
 // ---------------------------------------------------------------------
-export class ProductList extends React.Component<Props> {
+export class ProductItem extends React.Component<Props> {
   render() {
-    const { products } = this.props;
+    const { product } = this.props;
     return (
       <table className={classes.table}>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Color</th>
+            <th>Field</th>
+            <th>Value</th>
           </tr>
         </thead>
         <tbody>
-          {products.data.map((item, index) => (
-            <tr key={index}>
-              <td>
-                <Link to={`/item/${item.id}`}>{item.id}</Link>
-              </td>
-              <td>{item.name}</td>
-              <td>
-                <div className={classes.box} style={{ backgroundColor: item.color }} />
-              </td>
-            </tr>
-          ))}
+          <tr>
+            <td>ID</td>
+            <td>{product.data.id}</td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{product.data.name}</td>
+          </tr>
+          <tr>
+            <td>Year</td>
+            <td>{product.data.year}</td>
+          </tr>
+          <tr>
+            <td>Pan Tone Code</td>
+            <td>{product.data.pantone_value}</td>
+          </tr>
+          <tr>
+            <td>Color code</td>
+            <td>{product.data.color}</td>
+          </tr>
+          <tr>
+            <td>Color sample</td>
+            <td>
+              <div className={classes.box} style={{ backgroundColor: product.data.color }} />
+            </td>
+          </tr>
         </tbody>
       </table>
     );
