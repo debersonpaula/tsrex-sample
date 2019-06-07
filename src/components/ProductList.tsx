@@ -13,7 +13,6 @@ const { classes } = createJssStyle({
       padding: '8px 32px'
     },
     '& tbody tr': {
-      cursor: 'pointer',
       '&:hover': {
         backgroundColor: '#ddd'
       }
@@ -49,11 +48,14 @@ export class ProductList extends React.Component<Props> {
           {products.data.map((item, index) => (
             <tr key={index}>
               <td>
-                <Link to={`/item/${item.id}`}>{item.id}</Link>
+                {item.id}
               </td>
               <td>{item.name}</td>
               <td>
                 <div className={classes.box} style={{ backgroundColor: item.color }} />
+              </td>
+              <td>
+                <Link to={`/item/${item.id}`}>See detail</Link>
               </td>
             </tr>
           ))}

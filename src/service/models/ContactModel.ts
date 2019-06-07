@@ -1,20 +1,22 @@
 import { Model, Action } from 'exredux';
+import { IContactForm, IContactMessage } from '../interfaces/IContactForm';
 
 @Model
-export class ContactModel {
-  contact_name: string;
-  contact_email: string;
+export class ContactModel implements IContactForm {
+  messages = [];
+  input = {
+    name: '',
+    email: '',
+    message: ''
+  };
 
-  doFieldUpdate = (fieldName: string, value: string) => {
-    this[fieldName] = value;
+  @Action
+  doFieldUpdate(fieldName: string, value: string) {
+    this.input[fieldName] = value;
   }
 
   @Action
   doSubmit() {
-    // tslint:disable-next-line: no-console
-    console.log('Dados submetidos = ', {
-      contact_name: this.contact_name,
-      contact_email: this.contact_email
-    });
+    this.messages.push(Object.assign({}, this.input));
   }
 }

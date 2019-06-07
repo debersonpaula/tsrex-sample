@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Inject, Connection } from 'exredux';
 import { modelStore } from '../service/modelStore';
 import { Loading } from '../components/Loading';
-import { ProductList } from '../components/ProductList';
 import { Failed } from '../components/Failed';
 import { ProductItemModel } from '../service/models/ProductItemModel';
+import { ProductItem } from '../components/ProductItem';
 
 class Props {
   @Inject productItem: ProductItemModel;
@@ -15,11 +15,6 @@ class Props {
   props: Props
 })
 export class PageItems extends React.Component<Props> {
-  componentDidMount() {
-    const { productItem } = this.props;
-    productItem.getProduct(1);
-  }
-
   render() {
     const { productItem } = this.props;
     if (productItem.isLoading) {
@@ -29,7 +24,7 @@ export class PageItems extends React.Component<Props> {
       return <Failed />;
     }
     if (productItem.isCompleted) {
-      // return <ProductList products={productList.response.data} />;
+      return <ProductItem product={productItem.response.data} />;
     }
     return null;
   }
