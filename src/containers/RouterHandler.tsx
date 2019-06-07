@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { ProductItemModel } from '../service/models/ProductItemModel';
 import { Inject, Connection } from 'exredux';
 import { modelStore } from '../service/modelStore';
+import { RouterModel } from '../service/models/RouterModel';
 
 class ModelProps {
-  @Inject productItem?: ProductItemModel;
+  @Inject router?: RouterModel;
 }
 
 type Props = RouteComponentProps & ModelProps;
@@ -20,22 +20,12 @@ class RouterHandler extends React.Component<Props> {
   }
 
   componentDidMount() {
-    const { history } = this.props;
-    this.reloadProductItem(history.location.pathname);
-    
-    history.listen((location, action) => {
-      this.reloadProductItem(location.pathname);
+    const { history, router } = this.props;
+    router.routeChange(history.location.pathname);
+
+    history.listen(location => {
+      router.routeChange(history.location.pathname);
     });
-  }
-
-  reloadProductItem(pathname: string) {
-    const { productItem } = this.props;
-    const path = pathname.split('/');
-
-    if (path[1] === 'item') {
-      const productId = parseInt(path[2]);
-      productItem.getProduct(productId);
-    }
   }
 }
 
