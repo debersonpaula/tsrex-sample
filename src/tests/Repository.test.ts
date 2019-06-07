@@ -3,9 +3,9 @@ import { ProductListRepository } from '../service/repository/ProductListReposito
 import mockProductList from './mocks/productList';
 import mockProductItem from './mocks/productItem';
 
-describe('App', () => {
+describe('ProductListRepository', () => {
   // -------------------------------------------------------
-  it('test product list call', (done) => {
+  it('test getProducts call', (done) => {
     const request = ProductListRepository.getProducts();
 
     request.then(response => {
@@ -14,7 +14,7 @@ describe('App', () => {
     });
   });
   // -------------------------------------------------------
-  it('test product item call', (done) => {
+  it('test getProduct(1) call', (done) => {
     const request = ProductListRepository.getProduct(1);
 
     request.then(response => {
