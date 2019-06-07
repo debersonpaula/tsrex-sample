@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/jss": "^9.5.8",
-    "@types/react-jss": "^8.6.3"
+    "@types/react-jss": "^8.6.3",
+    "axios-mock-adapter": "^1.16.0"
   }
 }
