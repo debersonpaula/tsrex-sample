@@ -9,6 +9,6 @@ export type Styles<Name extends string = any> = Record<Name, Style | Record<stri
 export function createJssStyle<Name extends string>(styles: Partial<Styles<Name>>) {
   jss.use(jssCamelCase());
   jss.use(jssNested());
-  jss.use(jssDefaultUnit());
+  jss.use(jssDefaultUnit({}));
   return jss.createStyleSheet(styles).attach();
 }

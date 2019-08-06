@@ -20,4 +20,7 @@ module.exports = {
     },
     updateSnapshot: true,
   },
+  devServer: {
+    open: true
+  }
 };
