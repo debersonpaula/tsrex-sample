@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Inject, Connection } from 'exredux';
-import { modelStore } from '../service/modelStore';
 import { Loading } from '../components/Loading';
 import { Failed } from '../components/Failed';
 import { ProductItemModel } from '../service/models/ProductItemModel';
@@ -10,10 +9,7 @@ class Props {
   @Inject productItem: ProductItemModel;
 }
 
-@Connection({
-  modelStore,
-  props: Props
-})
+@Connection(Props)
 export class PageItems extends React.Component<Props> {
   render() {
     const { productItem } = this.props;

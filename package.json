@@ -11,16 +11,16 @@
   "author": "D.A.Paula",
   "license": "MIT",
   "dependencies": {
-    "jss": "9.8.7",
-    "jss-plugin-camel-case": "^10.0.0-alpha.7",
-    "jss-plugin-default-unit": "^10.0.0-alpha.7",
-    "jss-plugin-nested": "^10.0.0-alpha.7",
-    "jss-preset-default": "4.5.0",
-    "tsrex": "0.2.0"
+    "jss": "10.0.4",
+    "jss-plugin-camel-case": "10.0.4",
+    "jss-plugin-default-unit": "10.0.4",
+    "jss-plugin-nested": "10.0.4",
+    "jss-preset-default": "10.0.4",
+    "tsrex": "1.0.1"
   },
   "devDependencies": {
-    "@types/jss": "^9.5.8",
-    "@types/react-jss": "^8.6.3",
-    "axios-mock-adapter": "^1.16.0"
+    "@types/jss": "10.0.0",
+    "@types/react-jss": "10.0.0",
+    "axios-mock-adapter": "1.17.0"
   }
 }

@@ -1,13 +1,12 @@
-import { Model, Action } from 'exredux';
+import { Action } from 'exredux';
 import { IContactForm, IContactMessage } from '../interfaces/IContactForm';
 
-@Model
 export class ContactModel implements IContactForm {
   messages = [];
   input = {
     name: '',
     email: '',
-    message: ''
+    message: '',
   };
 
   @Action

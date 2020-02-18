@@ -1,7 +1,6 @@
-import { Model, Action, Inject, Trigger } from 'exredux';
+import { Action, Inject, Trigger } from 'exredux';
 import { ProductItemModel } from './ProductItemModel';
 
-@Model
 export class RouterModel {
   pathname = '';
 
@@ -23,7 +22,7 @@ export class RouterModel {
     this.productItem.getProduct(productId);
   }
 
-  @Trigger(ProductItemModel, 'completed')
+  @Trigger('completed', ProductItemModel)
   protected itemModelCompleted() {
     // tslint:disable-next-line: no-console
     console.log('Item Product Reloaded!');

@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <HashRouter>
-        <Provider modelStore={modelStore}>
+        <Provider models={modelStore}>
           <Dashboard />
         </Provider>
       </HashRouter>

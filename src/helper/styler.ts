@@ -2,9 +2,7 @@ import jss from 'jss';
 import jssCamelCase from 'jss-plugin-camel-case';
 import jssNested from 'jss-plugin-nested';
 import jssDefaultUnit from 'jss-plugin-default-unit';
-import { Style } from 'jss/css';
-
-export type Styles<Name extends string = any> = Record<Name, Style | Record<string, Style>>;
+import { Styles } from 'jss';
 
 export function createJssStyle<Name extends string>(styles: Partial<Styles<Name>>) {
   jss.use(jssCamelCase());

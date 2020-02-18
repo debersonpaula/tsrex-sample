@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { Inject, Connection } from 'exredux';
-import { modelStore } from '../service/modelStore';
 import { RouterModel } from '../service/models/RouterModel';
 
 class ModelProps {
@@ -10,10 +9,7 @@ class ModelProps {
 
 type Props = RouteComponentProps & ModelProps;
 
-@Connection({
-  modelStore,
-  props: ModelProps
-})
+@Connection(ModelProps)
 class RouterHandler extends React.Component<Props> {
   render() {
     return <React.Fragment />;
